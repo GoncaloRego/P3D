@@ -59,9 +59,7 @@ GLuint textureID;
 GLint lightPosLoc;
 GLint lightSpotDirLoc;
 GLint lightSpotCutOffLoc;
-GLint lightSpotCutOffLoc;
 GLint viewPosLoc;
-GLint lightSpotCutOffLoc;
 GLint lightSpotOuterCutOffLoc;
 
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
@@ -174,9 +172,7 @@ int main(void) {
 		lightPosLoc = glGetUniformLocation(programID, "light.position");
 		lightSpotDirLoc = glGetUniformLocation(programID, "light.direction");
 		lightSpotCutOffLoc = glGetUniformLocation(programID, "light.cutOff");
-		lightSpotCutOffLoc = glGetUniformLocation(programID, "light.outerCutOff");
 		viewPosLoc = glGetUniformLocation(programID, "light.viewPos");
-		lightSpotCutOffLoc = glGetUniformLocation(programID, "light.cutOff");
 		lightSpotOuterCutOffLoc = glGetUniformLocation(programID, "light.outerCutOff");
 
 		glUniform3d(lightPosLoc, cameraPosition.x, cameraPosition.y, cameraPosition.z);
