@@ -1,0 +1,5 @@
+﻿  Source.cpp
+c:\users\utilizador\desktop\trabalhop3d_13211_13217_10242\trabalhopratico\source.cpp(62): error C2086: 'GLint lightSpotCutOffLoc': redefinição
+  c:\users\utilizador\desktop\trabalhop3d_13211_13217_10242\trabalhopratico\source.cpp(61): note: consulte a declaração de 'lightSpotCutOffLoc'
+c:\users\utilizador\desktop\trabalhop3d_13211_13217_10242\trabalhopratico\source.cpp(64): error C2086: 'GLint lightSpotCutOffLoc': redefinição
+  c:\users\utilizador\desktop\trabalhop3d_13211_13217_10242\trabalhopratico\source.cpp(61): note: consulte a declaração de 'lightSpotCutOffLoc'

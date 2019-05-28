@@ -1,0 +1,10 @@
+﻿  Camera.cpp
+c:\users\nox\desktop\trabalhop3d_13211_13217_10242\trabalhopratico\camera.cpp(6): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
+  LoadShaders.cpp
+c:\users\nox\desktop\trabalhop3d_13211_13217_10242\trabalhopratico\loadshaders.cpp(10): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
+  ObjLoader.cpp
+c:\users\nox\desktop\trabalhop3d_13211_13217_10242\trabalhopratico\objloader.cpp(9): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
+  Source.cpp
+c:\users\nox\desktop\trabalhop3d_13211_13217_10242\trabalhopratico\source.cpp(12): fatal error C1083: Cannot open include file: 'GL\glew.h': No such file or directory
+  VboIndexer.cpp
+c:\users\nox\desktop\trabalhop3d_13211_13217_10242\trabalhopratico\vboindexer.cpp(4): fatal error C1083: Cannot open include file: 'glm/glm.hpp': No such file or directory
