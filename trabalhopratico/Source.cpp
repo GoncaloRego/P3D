@@ -78,7 +78,6 @@ std::vector<glm::vec3> indexed_normals;
 GLFWwindow* window;
 GLFWmonitor* monitor;
 
-
 #pragma region Matrices
 //Model Matrix//
 glm::vec3 translation = glm::vec3(0.0f, 0.0f, 0.0f); //translation
