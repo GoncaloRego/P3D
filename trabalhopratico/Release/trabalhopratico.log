@@ -1,5 +1,9 @@
 ﻿  Source.cpp
-c:\users\utilizador\desktop\trabalhop3d_13211_13217_10242\trabalhopratico\source.cpp(62): error C2086: 'GLint lightSpotCutOffLoc': redefinição
-  c:\users\utilizador\desktop\trabalhop3d_13211_13217_10242\trabalhopratico\source.cpp(61): note: consulte a declaração de 'lightSpotCutOffLoc'
-c:\users\utilizador\desktop\trabalhop3d_13211_13217_10242\trabalhopratico\source.cpp(64): error C2086: 'GLint lightSpotCutOffLoc': redefinição
-  c:\users\utilizador\desktop\trabalhop3d_13211_13217_10242\trabalhopratico\source.cpp(61): note: consulte a declaração de 'lightSpotCutOffLoc'
+LINK : warning LNK4098: defaultlib 'LIBCMT' conflita com uso de outras bibliotecas; use /NODEFAULTLIB:library
+  Gerando código
+  1 of 859 functions ( 0.1%) were compiled, the rest were copied from previous compilation.
+    0 functions were new in current compilation
+    0 functions had inline decision re-evaluated but remain unchanged
+  Finalizada a geração de código
+glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' não foi encontrado 'glew32s.lib(glew.obj)' ou no 'C:\Users\Utilizador\Desktop\IRONMAN\P3D\Release\vc120.pdb'; vinculando objeto quando quando sem nenhuma informação de depuração
+  trabalhopratico.vcxproj -> C:\Users\Utilizador\Desktop\IRONMAN\P3D\Release\trabalhopratico.exe

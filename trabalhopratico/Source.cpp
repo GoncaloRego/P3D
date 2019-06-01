@@ -167,21 +167,7 @@ int main(void) {
 		// Clear the screen
 		glClear(GL_COLOR_BUFFER_BIT);
 
-		//SPOTLIGHT
-		lightPosLoc = glGetUniformLocation(programID, "light.position");
-		lightSpotDirLoc = glGetUniformLocation(programID, "light.direction");
-		lightSpotCutOffLoc = glGetUniformLocation(programID, "light.cutOff");
-		viewPosLoc = glGetUniformLocation(programID, "light.viewPos");
-		lightSpotOuterCutOffLoc = glGetUniformLocation(programID, "light.outerCutOff");
-
-		glUniform3d(lightPosLoc, cameraPosition.x, cameraPosition.y, cameraPosition.z);
-		glUniform3d(lightSpotDirLoc, lookAtPosition.z, lookAtPosition.y, lookAtPosition.z);
-		glUniform3d(viewPosLoc, cameraPosition.x, cameraPosition.y, cameraPosition.z);
-		glUniform1f(lightSpotCutOffLoc, glm::cos(glm::radians(12.5f)));
-		glUniform1f(lightSpotOuterCutOffLoc, glm::cos(glm::radians(17.5f)));
-
-
-
+	
 		// Draw
 		display();
 
@@ -241,9 +227,20 @@ void init(void)
 	// Get a handle for our "LightPosition" uniform
 	lightID = glGetUniformLocation(programID, "LightPosition_worldspace");
 
-	
+
 	// Get a handle for our "myTexture" uniform
 	textureID = glGetUniformLocation(programID, "myTexture");
+
+
+	//SPOTLIGHT
+	lightPosLoc = glGetUniformLocation(programID, "light.position");
+	lightSpotDirLoc = glGetUniformLocation(programID, "light.direction");
+	lightSpotCutOffLoc = glGetUniformLocation(programID, "light.cutOff");
+	viewPosLoc = glGetUniformLocation(programID, "light.viewPos");
+	lightSpotOuterCutOffLoc = glGetUniformLocation(programID, "light.outerCutOff");
+
+
+
 
 	//Load into a VBO
 	indexVBO(vertices, uvs, normals, indices, indexed_vertices, indexed_uvs, indexed_normals);
@@ -290,7 +287,15 @@ void display(void)
 
 
 	glm::vec3 lightPos = glm::vec3(7, 4, 4);
-	glUniform3f(lightID, lightPos.x, lightPos.y, lightPos.z);
+	//glUniform3f(lightID, lightPos.x, lightPos.y, lightPos.z);
+
+
+	//SPOTLIGHT
+	glUniform3d(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
+	glUniform3d(lightSpotDirLoc, lookAtPosition.z, lookAtPosition.y, lookAtPosition.z);
+	glUniform3d(viewPosLoc, lookAtPosition.z, lookAtPosition.y, lookAtPosition.z);
+	glUniform1f(lightSpotCutOffLoc, glm::cos(glm::radians(12.5f)));
+	glUniform1f(lightSpotOuterCutOffLoc, glm::cos(glm::radians(17.5f)));
 
 	// Attribute buffer : vertices
 	glEnableVertexAttribArray(0);

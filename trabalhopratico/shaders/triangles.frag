@@ -15,7 +15,6 @@ uniform sampler2D myTexture;
 uniform mat4 MV;
 uniform vec3 LightPosition_worldspace;
 
-
 //SPOTLIGHT
 struct Light
 {
@@ -85,11 +84,12 @@ void main(){
 		MaterialSpecularColor * LightColor * LightPower * pow(cosAlpha,5) / (distance*distance);
 
 
-		//SPOTLIGHT
-		float theta = dot(LightDirection_cameraspace, normalize(-light.direction));
-		float epsilon = (light.cutOff - light.outerCutOff);
-		float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0);
-		MaterialDiffuseColor  *= intensity;
-		MaterialSpecularColor *= intensity;
+		
+	//SPOTLIGHT
+	float theta = dot(LightDirection_cameraspace, normalize(-light.direction));
+	float epsilon = (light.cutOff - light.outerCutOff);
+	float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0);
+	MaterialDiffuseColor  *= intensity;
+	MaterialSpecularColor *= intensity;
 
 }

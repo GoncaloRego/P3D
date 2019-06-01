@@ -18,6 +18,11 @@ uniform mat4 V;
 uniform mat4 M;
 uniform vec3 LightPosition_worldspace;
 
+
+
+
+
+
 void main(){
 
 	// Output position of the vertex, in clip space : MVP * position
@@ -40,5 +45,7 @@ void main(){
 	
 	// UV of the vertex. No special space for this one.
 	UV = vertexUV;
+
+
 }
 
