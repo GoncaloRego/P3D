@@ -23,7 +23,6 @@ using namespace std;
 #define STB_IMAGE_IMPLEMENTATION
 #include "include/stb_image.h"
 
-
 #include "LoadShaders.hpp"
 #include "Camera.hpp"
 #include "ObjLoader.hpp"
@@ -63,6 +62,8 @@ GLint viewPosLoc;
 GLint lightSpotOuterCutOffLoc;
 
 glm::vec3 lightPos(1.2f, 1.0f, 2.0f);
+
+bool enableSpotLight = false;
 
 
 vector< glm::vec3 > vertices;
@@ -122,11 +123,8 @@ glm::mat4 mvpMatrix = projectionMatrix * viewMatrix * modelMatrix;
 #pragma endregion
 
 
-
-
-int main(void) {
-
-
+int main(void) 
+{
 	glewExperimental = true;
 
 	if (!glfwInit())
@@ -136,37 +134,37 @@ int main(void) {
 
     cout << lightPosLoc;
 
-
 	// 4x antialiasing
 	glfwWindowHint(GLFW_SAMPLES, 4);
 
 	monitor = glfwGetPrimaryMonitor();
 
 	window = glfwCreateWindow(WIDTH, HEIGHT, "ProjetoP3D", NULL, NULL);
-	if (window == NULL) {
+	
+	if (window == NULL) 
+	{
 		glfwTerminate();
 		return -1;
 	}
 
 	glfwMakeContextCurrent(window);
 
-
 	glewExperimental = true;
-	if (glewInit() != GLEW_OK) {
+
+	if (glewInit() != GLEW_OK) 
+	{
 		return -1;
 	}
 
 	glfwSetInputMode(window, GLFW_STICKY_KEYS, GL_TRUE);
 	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
 
-
 	init();
 
-
-	do {
+	do 
+	{
 		// Clear the screen
 		glClear(GL_COLOR_BUFFER_BIT);
-
 	
 		// Draw
 		display();
@@ -175,9 +173,8 @@ int main(void) {
 		glfwSwapBuffers(window);
 		glfwPollEvents();
 
-	} // Check if the ESC key was pressed or the window was closed
-	while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS &&
-		glfwWindowShouldClose(window) == 0);
+	} 
+	while (glfwGetKey(window, GLFW_KEY_ESCAPE) != GLFW_PRESS && glfwWindowShouldClose(window) == 0);
 
 	// Cleanup VBO and shader
 	glDeleteBuffers(1, &vertexBuffer);
@@ -190,9 +187,7 @@ int main(void) {
 	// Close OpenGL window and terminate GLFW
 	glfwTerminate();
 
-
 	return 0;
-
 }
 
 void init(void) 
@@ -209,7 +204,6 @@ void init(void)
 
 	glGenVertexArrays(1, &vertexArrayID);
 	glBindVertexArray(vertexArrayID);
-
 
 	// Read our .obj file
 	bool res = loadOBJ("Model/Iron_Man.obj", vertices, uvs, normals);
