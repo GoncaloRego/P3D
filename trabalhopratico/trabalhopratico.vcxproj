@@ -132,6 +132,8 @@
     <ClInclude Include="Vbolndexer.hpp" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Light.frag" />
+    <None Include="Light.vert" />
     <None Include="lighting.vs" />
     <None Include="lightning.frag" />
     <None Include="shaders\triangles.frag" />

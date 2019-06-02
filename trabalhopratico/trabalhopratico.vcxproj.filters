@@ -61,5 +61,11 @@
     <None Include="lighting.vs">
       <Filter>Resource Files</Filter>
     </None>
+    <None Include="Light.frag">
+      <Filter>Resource Files</Filter>
+    </None>
+    <None Include="Light.vert">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -1,9 +1,9 @@
 ﻿  Source.cpp
 LINK : warning LNK4098: defaultlib 'LIBCMT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Generating code
-  38 of 870 functions ( 4.4%) were compiled, the rest were copied from previous compilation.
+  3 of 872 functions ( 0.3%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    2 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
 glew32s.lib(glew.obj) : warning LNK4099: PDB 'vc120.pdb' was not found with 'glew32s.lib(glew.obj)' or at 'C:\Users\NOX\Desktop\P3D\P3D\Release\vc120.pdb'; linking object as if no debug info
   trabalhopratico.vcxproj -> C:\Users\NOX\Desktop\P3D\P3D\Release\trabalhopratico.exe
