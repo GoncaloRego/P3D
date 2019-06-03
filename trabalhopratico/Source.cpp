@@ -170,6 +170,8 @@ int main(void)
 		// Draw
 		display();
 
+		//LightControl();
+
 		// Swap buffers
 		glfwSwapBuffers(window);
 		glfwPollEvents();
@@ -289,10 +291,27 @@ void display(void)
 	glUniformMatrix4fv(modelMatrixID, 1, GL_FALSE, &modelMatrix[0][0]);
 	glUniformMatrix4fv(viewMatrixID, 1, GL_FALSE, &viewMatrix[0][0]);
 
+	//LIGHTNING
+	//ERA SUPOSTO PÔR ISTO NUMA FUNÇÃO MAS ESTA MERDA NÃO DÁ PARA CHAMAR FUNÇÕES NA MAIN
+	//--//
+	glm::vec3 lightPos;
+
+	if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS)
+	{
+		std::cout << "Pressed 1" << std::endl;
+		lightPos = glm::vec3(7, 4, 4);
+		glUniform3f(lightID, lightPos.x, lightPos.y, lightPos.z);
+	}
+
+	else 
+	{
+		lightPos = glm::vec3(1, 2, 3);
+		glUniform3f(lightID, lightPos.x, lightPos.y, lightPos.z);
+	}
+	//--//
 
 	//glm::vec3 lightPos = glm::vec3(7, 4, 4);
 	//glUniform3f(lightID, lightPos.x, lightPos.y, lightPos.z);
-
 
 	//SPOTLIGHT
 	/*glUniform3d(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
@@ -420,4 +439,20 @@ void loadTexture(string textureFile)
 
 	// Frees the image from memory
 	stbi_image_free(imageData);
+}
+
+void LightControl()
+{
+	if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS)
+	{
+		std::cout << "Pressed 1" << std::endl;
+		glm::vec3 lightPos = glm::vec3(7, 4, 4);
+	}
+
+	else
+	{
+		glm::vec3 lightPos = glm::vec3(0, 0, 0);
+	}
+
+	glUniform3f(lightID, lightPos.x, lightPos.y, lightPos.z);
 }

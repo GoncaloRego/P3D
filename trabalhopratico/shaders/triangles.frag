@@ -16,7 +16,7 @@ uniform mat4 MV;
 uniform vec3 LightPosition_worldspace;
 
 //SPOTLIGHT
-struct Light
+/*struct Light
 {
     vec3 position;
     vec3 direction;
@@ -31,7 +31,7 @@ struct Light
     vec3 diffuse;
     vec3 specular;
 };
-uniform Light light;
+uniform Light light;*/
 
 
 
@@ -86,10 +86,10 @@ void main(){
 
 		
 	//SPOTLIGHT
-	float theta = dot(LightDirection_cameraspace, normalize(-light.direction));
+	/*float theta = dot(LightDirection_cameraspace, normalize(-light.direction));
 	float epsilon = (light.cutOff - light.outerCutOff);
 	float intensity = clamp((theta - light.outerCutOff) / epsilon, 0.0, 1.0);
 	MaterialDiffuseColor  *= intensity;
-	MaterialSpecularColor *= intensity;
+	MaterialSpecularColor *= intensity;*/
 
 }
