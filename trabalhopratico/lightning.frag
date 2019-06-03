@@ -45,8 +45,8 @@ void main()
     vec3 norm = normalize(Normal);
     
 	//DIRECTIONAL LIGHT
-	//vec3 lightDir = normalize(light.position - FragPos);
-    vec3 lightDir = normalize(-light.direction);
+	vec3 lightDir = normalize(light.position - FragPos);
+    //vec3 lightDir = normalize(-light.direction);
 
 
 	float diff = max(dot(norm, lightDir), 0.0);
