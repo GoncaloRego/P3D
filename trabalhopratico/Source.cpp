@@ -298,20 +298,16 @@ void display(void)
 
 	if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS)
 	{
-		std::cout << "Pressed 1" << std::endl;
 		lightPos = glm::vec3(7, 4, 4);
 		glUniform3f(lightID, lightPos.x, lightPos.y, lightPos.z);
 	}
 
-	else 
+	else if (glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS)
 	{
 		lightPos = glm::vec3(1, 2, 3);
 		glUniform3f(lightID, lightPos.x, lightPos.y, lightPos.z);
 	}
 	//--//
-
-	//glm::vec3 lightPos = glm::vec3(7, 4, 4);
-	//glUniform3f(lightID, lightPos.x, lightPos.y, lightPos.z);
 
 	//SPOTLIGHT
 	/*glUniform3d(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
