@@ -270,7 +270,7 @@ void init(void)
 	glUseProgram(programID);
 	
 	//LIGHTNING
-	glUseProgram(programa);
+	//glUseProgram(programa);
 }
 
 void display(void) 
@@ -280,7 +280,7 @@ void display(void)
 	glUseProgram(programID);
 
 	//LIGHTNING
-	glUseProgram(programa);
+	//glUseProgram(programa);
 
 	//viewMatrix based on inputs
 	computeMatrixFromInputs(window);
@@ -294,19 +294,30 @@ void display(void)
 	//LIGHTNING
 	//ERA SUPOSTO PÔR ISTO NUMA FUNÇÃO MAS ESTA MERDA NÃO DÁ PARA CHAMAR FUNÇÕES NA MAIN
 	//--//
+	
 	glm::vec3 lightPos;
+	
 
 	if (glfwGetKey(window, GLFW_KEY_1) == GLFW_PRESS)
 	{
-		std::cout << "Pressed 1" << std::endl;
+		lightPos = glm::vec3(1, 2, 3);
+		glUniform3f(lightID, lightPos.x, lightPos.y, lightPos.z);
+	}
+
+	else if(glfwGetKey(window, GLFW_KEY_2) == GLFW_PRESS)
+	{
 		lightPos = glm::vec3(7, 4, 4);
 		glUniform3f(lightID, lightPos.x, lightPos.y, lightPos.z);
 	}
 
-	else 
+	else if (glfwGetKey(window, GLFW_KEY_3) == GLFW_PRESS)
 	{
-		lightPos = glm::vec3(1, 2, 3);
-		glUniform3f(lightID, lightPos.x, lightPos.y, lightPos.z);
+
+	}
+
+	else if (glfwGetKey(window, GLFW_KEY_4) == GLFW_PRESS)
+	{
+
 	}
 	//--//
 
@@ -314,11 +325,11 @@ void display(void)
 	//glUniform3f(lightID, lightPos.x, lightPos.y, lightPos.z);
 
 	//SPOTLIGHT
-	/*glUniform3d(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
+	glUniform3d(lightPosLoc, lightPos.x, lightPos.y, lightPos.z);
 	glUniform3d(lightSpotDirLoc, lookAtPosition.z, lookAtPosition.y, lookAtPosition.z);
 	glUniform3d(viewPosLoc, lookAtPosition.z, lookAtPosition.y, lookAtPosition.z);
 	glUniform1f(lightSpotCutOffLoc, glm::cos(glm::radians(12.5f)));
-	glUniform1f(lightSpotOuterCutOffLoc, glm::cos(glm::radians(17.5f)));*/
+	glUniform1f(lightSpotOuterCutOffLoc, glm::cos(glm::radians(17.5f)));
 
 	// Attribute buffer : vertices
 	glEnableVertexAttribArray(0);
